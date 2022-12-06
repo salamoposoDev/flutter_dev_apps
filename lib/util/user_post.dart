@@ -75,7 +75,7 @@ class UserPost extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Row(
             children: [
-              Text('183.474 suka'),
+              Text('183.700 suka'),
             ],
           ),
         ),
