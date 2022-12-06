@@ -154,7 +154,7 @@ class PersonPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'Edit profile',
                           style: TextStyle(
@@ -170,9 +170,10 @@ class PersonPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10)),
                     ),
                     Container(
-                      child: Center(
+                      // ignore: sort_child_properties_last
+                      child: const Center(
                         child: Text(
-                          'Bagikan profile',
+                          'new profile',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 12,
@@ -188,6 +189,7 @@ class PersonPage extends StatelessWidget {
                   ],
                 ),
               )
+              // HIGHLIGHT STORIES
             ],
           )
         ],
