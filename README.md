@@ -1,6 +1,6 @@
 # cloning_instagram
 
-A new Flutter project.
+i try to clonning instagram using flutter.
 
 ## Getting Started
 
