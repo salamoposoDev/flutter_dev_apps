@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class ExploreGrid extends StatelessWidget {
-  const ExploreGrid({super.key});
+class TabBarPost extends StatelessWidget {
+  const TabBarPost({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      itemCount: 28,
+      itemCount: 5,
       gridDelegate:
           SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.all(1.0),
+          padding: const EdgeInsets.all(8.0),
           child: Container(
-            color: Colors.deepPurple[100],
+            color: Colors.green[100],
           ),
         );
       },

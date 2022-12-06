@@ -74,7 +74,7 @@ class ShopPage extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.all(2.0),
                     child: Container(
-                      color: Colors.grey[300],
+                      color: Colors.blueGrey[100],
                     ),
                   );
                 }),
