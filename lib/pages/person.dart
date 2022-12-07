@@ -29,13 +29,46 @@ class PersonPage extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('salamoposo'),
+              const Text(
+                'salamoposo',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
               Row(
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                  const Icon(Icons.add),
+                  GestureDetector(
+                    onTap: () {
+                      showModalBottomSheet(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Container(
+                              child: Text('Bottom Sheet'),
+                              height: 400,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            );
+                          });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                      ),
+                      child: const Icon(
+                        Icons.add,
+                        size: 20,
+                      ),
+                    ),
+                  ),
                   const SizedBox(width: 20),
-                  const Icon(Icons.menu),
+                  const Icon(
+                    Icons.menu,
+                    size: 30,
+                  ),
                 ],
               ),
             ],
@@ -56,6 +89,10 @@ class PersonPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.grey[300],
                       shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.blue,
+                        width: 2,
+                      ),
                     ),
                   ),
                 ),

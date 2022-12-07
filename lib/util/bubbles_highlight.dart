@@ -15,6 +15,10 @@ class HighlighsStory extends StatelessWidget {
             height: 70,
             width: 70,
             decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.grey,
+                width: 2,
+              ),
               color: Colors.grey[300],
               shape: BoxShape.circle,
             ),

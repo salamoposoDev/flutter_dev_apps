@@ -24,14 +24,32 @@ class UserHome extends StatelessWidget {
           children: [
             Text(
               'Instagram',
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 24,
+              ),
             ),
             Row(
               children: [
-                Icon(Icons.add),
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.black,
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Icon(
+                    Icons.add,
+                    size: 20,
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.all(24.0),
-                  child: Icon(Icons.favorite_border_outlined),
+                  child: Icon(
+                    Icons.favorite_border_outlined,
+                    size: 30,
+                  ),
                 ),
                 Icon(Icons.messenger_outline_rounded),
               ],

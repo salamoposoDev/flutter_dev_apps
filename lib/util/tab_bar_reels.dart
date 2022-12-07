@@ -12,7 +12,7 @@ class TabBarReels extends StatelessWidget {
       ),
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(1.0),
           child: Container(
             color: Colors.red[100],
           ),

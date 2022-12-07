@@ -20,6 +20,10 @@ class UserPost extends StatelessWidget {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.blue,
+                        width: 2,
+                      ),
                       shape: BoxShape.circle,
                       color: Colors.grey[300],
                     ),
