@@ -44,34 +44,38 @@ class PersonPage extends StatelessWidget {
                           context: context,
                           builder: (BuildContext context) {
                             return Container(
+                              // ignore: sort_child_properties_last
                               child: Column(
                                 children: [
-                                  SizedBox(height: 10),
-                                  Text(
+                                  const SizedBox(height: 10),
+                                  const Text(
                                     'Buat',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
                                     ),
                                   ),
-                                  SizedBox(height: 30),
+                                  const SizedBox(height: 30),
                                   // rells
                                   Container(
+                                    // ignore: sort_child_properties_last
                                     child: Row(
+                                      // ignore: prefer_const_literals_to_create_immutables
                                       children: [
-                                        SizedBox(width: 10),
-                                        Icon(
+                                        const SizedBox(width: 10),
+                                        const Icon(
                                           Icons.video_call,
                                           size: 30,
                                         ),
-                                        SizedBox(width: 10),
-                                        Text(
+                                        const SizedBox(width: 10),
+                                        const Text(
                                           'Reel',
                                           style: TextStyle(fontSize: 20),
                                         ),
                                       ],
                                     ),
-                                    constraints: BoxConstraints.tightForFinite(
+                                    constraints:
+                                        const BoxConstraints.tightForFinite(
                                       width: 400,
                                       height: 50,
                                     ),
@@ -86,19 +90,20 @@ class PersonPage extends StatelessWidget {
                                   Container(
                                     child: Row(
                                       children: [
-                                        SizedBox(width: 10),
-                                        Icon(
+                                        const SizedBox(width: 10),
+                                        const Icon(
                                           Icons.grid_4x4_outlined,
                                           size: 30,
                                         ),
-                                        SizedBox(width: 10),
-                                        Text(
+                                        const SizedBox(width: 10),
+                                        const Text(
                                           'Postingan',
                                           style: TextStyle(fontSize: 20),
                                         ),
                                       ],
                                     ),
-                                    constraints: BoxConstraints.tightForFinite(
+                                    constraints:
+                                        const BoxConstraints.tightForFinite(
                                       width: 400,
                                       height: 50,
                                     ),
@@ -113,19 +118,20 @@ class PersonPage extends StatelessWidget {
                                   Container(
                                     child: Row(
                                       children: [
-                                        SizedBox(width: 10),
-                                        Icon(
+                                        const SizedBox(width: 10),
+                                        const Icon(
                                           Icons.add_a_photo_outlined,
                                           size: 30,
                                         ),
-                                        SizedBox(width: 10),
-                                        Text(
+                                        const SizedBox(width: 10),
+                                        const Text(
                                           'Sorotan Cerita',
                                           style: TextStyle(fontSize: 20),
                                         ),
                                       ],
                                     ),
-                                    constraints: BoxConstraints.tightForFinite(
+                                    constraints:
+                                        const BoxConstraints.tightForFinite(
                                       width: 400,
                                       height: 50,
                                     ),
@@ -140,19 +146,20 @@ class PersonPage extends StatelessWidget {
                                   Container(
                                     child: Row(
                                       children: [
-                                        SizedBox(width: 10),
-                                        Icon(
+                                        const SizedBox(width: 10),
+                                        const Icon(
                                           Icons.live_tv_outlined,
                                           size: 30,
                                         ),
-                                        SizedBox(width: 10),
-                                        Text(
+                                        const SizedBox(width: 10),
+                                        const Text(
                                           'Siaran Langsung',
                                           style: TextStyle(fontSize: 20),
                                         ),
                                       ],
                                     ),
-                                    constraints: BoxConstraints.tightForFinite(
+                                    constraints:
+                                        const BoxConstraints.tightForFinite(
                                       width: 400,
                                       height: 50,
                                     ),
@@ -168,19 +175,20 @@ class PersonPage extends StatelessWidget {
                                   Container(
                                     child: Row(
                                       children: [
-                                        SizedBox(width: 10),
-                                        Icon(
+                                        const SizedBox(width: 10),
+                                        const Icon(
                                           Icons.bookmarks_outlined,
                                           size: 30,
                                         ),
-                                        SizedBox(width: 10),
-                                        Text(
+                                        const SizedBox(width: 10),
+                                        const Text(
                                           'Panduna',
                                           style: TextStyle(fontSize: 20),
                                         ),
                                       ],
                                     ),
-                                    constraints: BoxConstraints.tightForFinite(
+                                    constraints:
+                                        const BoxConstraints.tightForFinite(
                                       width: 400,
                                       height: 50,
                                     ),
@@ -407,7 +415,7 @@ class PersonPage extends StatelessWidget {
                       }),
                 ),
 
-                TabBar(
+                const TabBar(
                   tabs: [
                     Tab(
                       icon: Icon(Icons.grid_4x4),
@@ -422,7 +430,7 @@ class PersonPage extends StatelessWidget {
                 ),
               ],
             ),
-            Expanded(
+            const Expanded(
               child: TabBarView(
                 children: [
                   TabBarPost(),
