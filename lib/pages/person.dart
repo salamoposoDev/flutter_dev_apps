@@ -1,4 +1,5 @@
 import 'package:cloning_instagram/util/bubbles_highlight.dart';
+import 'package:cloning_instagram/util/setting_menu.dart';
 import 'package:cloning_instagram/util/tab_bar_person.dart';
 import 'package:cloning_instagram/util/tab_bar_post.dart';
 import 'package:cloning_instagram/util/tab_bar_reels.dart';
@@ -16,6 +17,33 @@ class PersonPage extends StatelessWidget {
     'Pantai',
     'Gunung',
     'Kampus',
+  ];
+
+  final List mySettings = [
+    'Pengaturan',
+    'Aktifitas anda',
+    'Arsip',
+    'Insight',
+    'Kode QR',
+    'Tersimpan',
+    'Koleksi digital',
+    'Teman dekat',
+    'Favorit',
+    'Temukan orang',
+    'Pusat informasi COVID-19',
+  ];
+  final List itemSetting = [
+    Icons.settings,
+    Icons.history,
+    Icons.save,
+    Icons.insert_chart,
+    Icons.qr_code,
+    Icons.save,
+    Icons.collections,
+    Icons.people,
+    Icons.favorite,
+    Icons.find_in_page,
+    Icons.coronavirus,
   ];
 
   @override
@@ -37,7 +65,8 @@ class PersonPage extends StatelessWidget {
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
                   //ADD POST BUTTON
-                  GestureDetector(
+                  InkWell(
+                    splashColor: Colors.grey,
                     onTap: () {
                       showModalBottomSheet(
                           backgroundColor: Colors.transparent,
@@ -88,20 +117,6 @@ class PersonPage extends StatelessWidget {
 
                                   // Postingan
                                   Container(
-                                    child: Row(
-                                      children: [
-                                        const SizedBox(width: 10),
-                                        const Icon(
-                                          Icons.grid_4x4_outlined,
-                                          size: 30,
-                                        ),
-                                        const SizedBox(width: 10),
-                                        const Text(
-                                          'Postingan',
-                                          style: TextStyle(fontSize: 20),
-                                        ),
-                                      ],
-                                    ),
                                     constraints:
                                         const BoxConstraints.tightForFinite(
                                       width: 400,
@@ -112,19 +127,34 @@ class PersonPage extends StatelessWidget {
                                         color: Colors.grey,
                                       ),
                                     ),
+                                    child: Row(
+                                      children: const [
+                                        SizedBox(width: 10),
+                                        Icon(
+                                          Icons.grid_4x4_outlined,
+                                          size: 30,
+                                        ),
+                                        SizedBox(width: 10),
+                                        Text(
+                                          'Postingan',
+                                          style: TextStyle(fontSize: 20),
+                                        ),
+                                      ],
+                                    ),
                                   ),
 
                                   // SOROTAN CERITA
                                   Container(
+                                    // ignore: sort_child_properties_last
                                     child: Row(
-                                      children: [
-                                        const SizedBox(width: 10),
-                                        const Icon(
+                                      children: const [
+                                        SizedBox(width: 10),
+                                        Icon(
                                           Icons.add_a_photo_outlined,
                                           size: 30,
                                         ),
-                                        const SizedBox(width: 10),
-                                        const Text(
+                                        SizedBox(width: 10),
+                                        Text(
                                           'Sorotan Cerita',
                                           style: TextStyle(fontSize: 20),
                                         ),
@@ -144,20 +174,6 @@ class PersonPage extends StatelessWidget {
 
                                   // SIARAN LANGSUNG
                                   Container(
-                                    child: Row(
-                                      children: [
-                                        const SizedBox(width: 10),
-                                        const Icon(
-                                          Icons.live_tv_outlined,
-                                          size: 30,
-                                        ),
-                                        const SizedBox(width: 10),
-                                        const Text(
-                                          'Siaran Langsung',
-                                          style: TextStyle(fontSize: 20),
-                                        ),
-                                      ],
-                                    ),
                                     constraints:
                                         const BoxConstraints.tightForFinite(
                                       width: 400,
@@ -168,25 +184,25 @@ class PersonPage extends StatelessWidget {
                                         color: Colors.grey,
                                       ),
                                     ),
+                                    child: Row(
+                                      children: const [
+                                        SizedBox(width: 10),
+                                        Icon(
+                                          Icons.live_tv_outlined,
+                                          size: 30,
+                                        ),
+                                        SizedBox(width: 10),
+                                        Text(
+                                          'Siaran Langsung',
+                                          style: TextStyle(fontSize: 20),
+                                        ),
+                                      ],
+                                    ),
                                   ),
 
                                   // PANDUAN
 
                                   Container(
-                                    child: Row(
-                                      children: [
-                                        const SizedBox(width: 10),
-                                        const Icon(
-                                          Icons.bookmarks_outlined,
-                                          size: 30,
-                                        ),
-                                        const SizedBox(width: 10),
-                                        const Text(
-                                          'Panduna',
-                                          style: TextStyle(fontSize: 20),
-                                        ),
-                                      ],
-                                    ),
                                     constraints:
                                         const BoxConstraints.tightForFinite(
                                       width: 400,
@@ -196,6 +212,20 @@ class PersonPage extends StatelessWidget {
                                       border: Border.all(
                                         color: Colors.white,
                                       ),
+                                    ),
+                                    child: Row(
+                                      children: const [
+                                        SizedBox(width: 10),
+                                        Icon(
+                                          Icons.bookmarks_outlined,
+                                          size: 30,
+                                        ),
+                                        SizedBox(width: 10),
+                                        Text(
+                                          'Panduan',
+                                          style: TextStyle(fontSize: 20),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
@@ -223,9 +253,44 @@ class PersonPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 20),
-                  const Icon(
-                    Icons.menu,
-                    size: 30,
+
+                  // MENU ICON
+                  InkWell(
+                    splashColor: Colors.grey,
+                    onTap: () {
+                      showModalBottomSheet(
+                          backgroundColor: Colors.transparent,
+                          context: context,
+                          isScrollControlled: true,
+                          builder: (BuildContext context) {
+                            return Container(
+                              height: 600,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[100],
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 40),
+                                  Expanded(
+                                    child: ListView.builder(
+                                      itemCount: mySettings.length,
+                                      itemBuilder: (context, index) {
+                                        return MenuSetting(
+                                            iconset: itemSetting[index],
+                                            textSetting: mySettings[index]);
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          });
+                    },
+                    child: Icon(
+                      Icons.menu,
+                      size: 30,
+                    ),
                   ),
                 ],
               ),
@@ -329,32 +394,35 @@ class PersonPage extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    // ignore: sort_child_properties_last
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          const Text(
-                            'Dashboard Profesional',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                  child: InkWell(
+                    splashColor: Colors.green,
+                    child: Container(
+                      // ignore: sort_child_properties_last
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Text(
+                              'Dashboard Profesional',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          const Text(
-                            'Fitur baru kini tersedia',
-                            style: TextStyle(fontSize: 12),
-                          )
-                        ],
+                            const Text(
+                              'Fitur baru kini tersedia',
+                              style: TextStyle(fontSize: 12),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    width: 400,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(10),
+                      width: 400,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[300],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                     ),
                   ),
                 ),
@@ -366,6 +434,12 @@ class PersonPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
+                        height: 30,
+                        width: 170,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                         child: const Center(
                           child: Text(
                             'Edit profile',
@@ -374,12 +448,6 @@ class PersonPage extends StatelessWidget {
                               fontSize: 12,
                             ),
                           ),
-                        ),
-                        height: 30,
-                        width: 170,
-                        decoration: BoxDecoration(
-                          color: Colors.grey[300],
-                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                       Container(
